@@ -7,7 +7,7 @@ function MainSection() {
   const [listTasks, setListTasks] = useState([]);
 
   return (
-    <div>
+    <div className="max-w-md w-full bg-white rounded-xl shadow-lg p-6">
       <h1>Lista de Tarefas</h1>
       <InputTarefa task={task} setTask={setTask} />
       <AddButton
@@ -18,9 +18,19 @@ function MainSection() {
       />
       <ul>
         {listTasks.map((task, index) => (
-          <li key={index}>{task}</li>
+          <li
+            key={index}
+            className="p-4 bg-gray-50 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+          >
+            {task}
+          </li>
         ))}
       </ul>
+      {listTasks.length === 0 && (
+        <p className="text-center text-gray-500 py-4">
+          Nenhuma tarefa disponível. Adicione sua primeira tarefa!
+        </p>
+      )}
     </div>
   );
 }
