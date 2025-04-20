@@ -21,7 +21,7 @@ Este é um projeto simples de lista de tarefas (To-Do List) desenvolvido com Rea
 
 ## 📂 Prints
 
-(./public/preview-todolist.png)
+![preview](./public/preview-todolist.png)
 
 ## ▶️ Como executar o projeto
 
