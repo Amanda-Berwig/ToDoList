@@ -1,21 +1,14 @@
 import React from "react";
-import { SquarePen } from "lucide-react";
+import { Edit } from "lucide-react";
 
-function EditButton({ listTasks, setModoEdição, index, setTask }) {
-  const EditTask = () => {
-    const taskToEdit = listTasks[index];
-    setModoEdição(true);
-  };
-
+function EditButton({ id, task, iniciarEdicao }) {
   return (
-    <div>
-      <button
-        onClick={EditTask}
-        className="absolute right-12 top-3 hover:bg-gray-200 rounded-full p-1 transition-colors"
-      >
-        <SquarePen size={20} />
-      </button>
-    </div>
+    <button
+      onClick={() => iniciarEdicao(id, task)}
+      className="absolute right-4 top-1/2 transform -translate-y-1/2 text-blue-500 hover:text-blue-700"
+    >
+      <Edit size={18} />
+    </button>
   );
 }
 
