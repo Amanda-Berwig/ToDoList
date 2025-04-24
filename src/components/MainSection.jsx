@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import { SquareCheck } from "lucide-react";
-import { SquareX } from "lucide-react";
-
 import InputTarefa from "./InputTarefa";
 import AddButton from "./AddButton";
 
@@ -14,7 +11,6 @@ function MainSection() {
   const handleStartEdit = (item) => {
     setModoEdicao(item.id);
     setTextoEditando(item.task); // pré-preenche o input com o valor atual
-    console.log("tarefa sendo editada");
   };
 
   const handleEdit = (event, item) => {
