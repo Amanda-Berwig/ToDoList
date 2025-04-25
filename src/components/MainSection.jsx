@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import InputTarefa from "./InputTarefa";
 import AddButton from "./AddButton";
 import { useTheme } from "./ThemeContext";
+import DeleteButton from "./DeleteButton";
 
 function MainSection() {
   const [task, setTask] = useState("");
@@ -25,6 +26,11 @@ function MainSection() {
     } else if (event.key === "Escape") {
       setModoEdicao(null); // cancela edição
     }
+  };
+
+  const deleteTask = (id) => {
+    const novaLista = listTasks.filter((tarefa) => tarefa.id !== id);
+    setListTasks(novaLista);
   };
 
   return (
@@ -69,6 +75,7 @@ function MainSection() {
             ) : (
               <span>{item.task}</span>
             )}
+            <DeleteButton onDelete={() => deleteTask(item.id)} />
           </li>
         ))}
       </ul>
