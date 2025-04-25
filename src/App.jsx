@@ -14,7 +14,7 @@ function AppContent() {
 
   return (
     <div
-      className={`min-h-screen p-4 flex items-center justify-center ${colorBg}`}
+      className={`min-h-screen p-4 flex items-center transition-colors duration-500 justify-center ${colorBg}`}
     >
       <div className="absolute top-4 right-4">
         <ThemeToggleButton />

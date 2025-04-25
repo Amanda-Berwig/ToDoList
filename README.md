@@ -15,8 +15,8 @@ Este é um projeto simples de lista de tarefas (To-Do List) desenvolvido com Rea
 - [x] Adicionar nova tarefa
 - [x] Exibir lista de tarefa
 - [x] Editar lista de tarefas
-- [ ] Marcar tarefa como concluída
-- [ ] Remover tarefa
+- [x] Marcar tarefa como concluída
+- [x] Remover tarefa
 - [ ] Salvar tarefas no localStorage
 
 ## 📂 Prints
