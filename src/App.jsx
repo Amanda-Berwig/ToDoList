@@ -1,15 +1,33 @@
+import { useTheme } from "./components/ThemeContext";
 import "./App.css";
 import MainSection from "./components/MainSection";
 import { ThemeProvider } from "./components/ThemeContext";
 import ThemeToggleButton from "./components/ThemeToggleButton";
 
+function AppContent() {
+  const { theme } = useTheme();
+
+  const colorBg =
+    theme === "dark"
+      ? "bg-gradient-to-br from-[#284B63] to-[#6C757D] text-gray-900"
+      : "bg-gradient-to-br from-[#90E0EF] to-[#CAF0F8] text-gray-900";
+
+  return (
+    <div
+      className={`min-h-screen p-4 flex items-center justify-center ${colorBg}`}
+    >
+      <div className="absolute top-4 right-4">
+        <ThemeToggleButton />
+      </div>
+      <MainSection />
+    </div>
+  );
+}
+
 function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 p-4 flex items-center justify-center dark:bg-blue-950">
-        <ThemeToggleButton />
-        <MainSection />
-      </div>
+      <AppContent />
     </ThemeProvider>
   );
 }

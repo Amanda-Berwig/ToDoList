@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import InputTarefa from "./InputTarefa";
 import AddButton from "./AddButton";
+import { useTheme } from "./ThemeContext";
 
 function MainSection() {
   const [task, setTask] = useState("");
   const [listTasks, setListTasks] = useState([]);
   const [modoEdição, setModoEdicao] = useState(false);
   const [textoEditando, setTextoEditando] = useState(""); // guarda o novo valor digitado
+  const { theme } = useTheme();
 
   const handleStartEdit = (item) => {
     setModoEdicao(item.id);
@@ -26,8 +28,12 @@ function MainSection() {
   };
 
   return (
-    <div className="max-w-md w-full bg-white rounded-xl shadow-lg p-6">
-      <h1 className="text-center">Lista de Tarefas</h1>
+    <div
+      className={`max-w-md w-full rounded-xl shadow-lg p-6 ${
+        theme === "light" ? "bg-[#FFFFFF]" : "bg-[#d7dbe0]"
+      }`}
+    >
+      <h1 className="text-center font-bold">Lista de Tarefas</h1>
       <div className="flex items-center gap-5 m-5">
         <InputTarefa task={task} setTask={setTask} />
         <AddButton
@@ -43,7 +49,11 @@ function MainSection() {
           <li
             key={item.id}
             onDoubleClick={() => handleStartEdit(item)}
-            className="relative p-4 bg-gray-50 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+            className={`relative p-4 rounded-lg ${
+              theme === "light"
+                ? " bg-gray-50  border-gray-100"
+                : "bg-[#cad0d5] border-[#d7dbe0]"
+            } shadow-sm border hover:shadow-md transition-shadow`}
           >
             {modoEdição === item.id ? (
               <div className="flex items-center justify-between">
