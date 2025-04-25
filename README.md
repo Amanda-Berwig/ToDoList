@@ -18,6 +18,7 @@ Este é um projeto simples de lista de tarefas (To-Do List) desenvolvido com Rea
 - [x] Marcar tarefa como concluída
 - [x] Remover tarefa
 - [ ] Salvar tarefas no localStorage
+- [ ] Filtrar tarefas
 
 ## 📂 Prints
 
