@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Circle, CircleCheckBig } from "lucide-react";
-import InputTarefa from "./InputTarefa";
+import TaskForm from "./TaskForm";
 import AddButton from "./AddButton";
 import { useTheme } from "./ThemeContext";
 import DeleteButton from "./DeleteButton";
@@ -49,7 +49,7 @@ function MainSection() {
     >
       <h1 className="text-center font-bold">Lista de Tarefas</h1>
       <div className="flex items-center gap-5 m-5">
-        <InputTarefa task={task} setTask={setTask} />
+        <TaskForm task={task} setTask={setTask} />
         <AddButton
           task={task}
           setTask={setTask}

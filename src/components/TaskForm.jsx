@@ -1,6 +1,6 @@
 import { useTheme } from "./ThemeContext";
 
-function InputTarefa({ task, setTask }) {
+function TaskForm({ task, setTask }) {
   const { theme } = useTheme();
   return (
     <>
@@ -17,4 +17,4 @@ function InputTarefa({ task, setTask }) {
   );
 }
 
-export default InputTarefa;
+export default TaskForm;
