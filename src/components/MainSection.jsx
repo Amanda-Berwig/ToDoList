@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Circle, CircleCheckBig } from "lucide-react";
 import InputTarefa from "./InputTarefa";
 import AddButton from "./AddButton";
 import { useTheme } from "./ThemeContext";
@@ -33,6 +34,13 @@ function MainSection() {
     setListTasks(novaLista);
   };
 
+  const toggleDone = (id) => {
+    const novaLista = listTasks.map((tarefa) =>
+      tarefa.id === id ? { ...tarefa, done: !tarefa.done } : tarefa
+    );
+    setListTasks(novaLista);
+  };
+
   return (
     <div
       className={`max-w-md w-full rounded-xl shadow-lg p-6 ${
@@ -64,7 +72,7 @@ function MainSection() {
             {modoEdição === item.id ? (
               <div className="flex items-center justify-between">
                 <input
-                  className="border px-2 py-1 rounded w-full mr-2"
+                  className="border px-2 py-1 rounded w-full "
                   value={textoEditando}
                   onChange={(e) => setTextoEditando(e.target.value)}
                   onKeyDown={(e) => handleEdit(e, item)}
@@ -73,7 +81,23 @@ function MainSection() {
                 <div className="flex gap-2"></div>
               </div>
             ) : (
-              <span>{item.task}</span>
+              <div
+                className="flex items-center gap-2"
+                onClick={() => toggleDone(item.id)}
+              >
+                {item.done ? (
+                  <CircleCheckBig strokeWidth="1.5px" />
+                ) : (
+                  <Circle strokeWidth="1.5px" />
+                )}
+                <span
+                  className={
+                    item.done ? "line-through text-gray-500" : "text-gray-800"
+                  }
+                >
+                  {item.task}
+                </span>
+              </div>
             )}
             <DeleteButton onDelete={() => deleteTask(item.id)} />
           </li>

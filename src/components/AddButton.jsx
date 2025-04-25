@@ -10,7 +10,7 @@ function AddButton({ task, setTask, listTasks, setListTasks }) {
       alert("Digite uma tarefa!");
       return;
     }
-    setListTasks([...listTasks, { id: uuidv4(), task }]);
+    setListTasks([...listTasks, { id: uuidv4(), task, done: false }]);
     setTask("");
   };
 
