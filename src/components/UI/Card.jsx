@@ -8,7 +8,7 @@ const Card = ({ children }) => {
         theme === "light" ? "bg-[#FFFFFF]" : "bg-[#d7dbe0]"
       }`}
     >
-      <h1 className="mt-4 text-center font-bold">Lista de Tarefas</h1>
+      <h1 className="mt-4 text-center font-bold mb-5">Lista de Tarefas</h1>
       {children}
     </div>
   );
