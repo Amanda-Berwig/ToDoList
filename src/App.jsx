@@ -1,8 +1,8 @@
-import { useTheme } from "./components/ThemeContext";
+import { useTheme } from "./components/Theme/ThemeContext";
 import "./App.css";
 import MainSection from "./components/MainSection";
-import { ThemeProvider } from "./components/ThemeContext";
-import ThemeToggleButton from "./components/ThemeToggleButton";
+import { ThemeProvider } from "./components/Theme/ThemeContext";
+import ThemeToggleButton from "./components/Theme/ThemeToggleButton";
 
 function AppContent() {
   const { theme } = useTheme();
